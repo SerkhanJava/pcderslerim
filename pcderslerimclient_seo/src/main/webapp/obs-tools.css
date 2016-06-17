@@ -1,0 +1,58 @@
+.webcam-bg {
+    overflow: hidden;
+    height: 250px;
+    background-color: #00ff00;
+    -webkit-box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.19);
+-moz-box-shadow:    7px 7px 0px 0px rgba(50, 50, 50, 0.19);
+box-shadow:         7px 7px 0px 0px rgba(50, 50, 50, 0.19);
+    border: 1px solid #fff;
+}
+
+.padding, .buttonGroup {padding-top: 20px;}
+
+.button {padding: 20px 30px; font-size: 20px;}
+.btn-lg {
+    padding: 10px 11px;
+    font-size: 19px;
+    line-height: 1.3333333;
+    border-radius: 0;
+-webkit-box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+-moz-box-shadow:    3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+box-shadow:         3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+
+}
+
+ul {
+	display: block;
+	list-style-type: none;
+	padding: 0;
+}
+
+ul>li {
+	float: left;
+	padding-right: 10px;
+}
+
+ul>li>a:hover {text-decoration: none;}
+
+ul>li>a h3 {
+	font-size: 12px;
+	background-color: rgb(217, 83, 79);
+    padding: 5px;
+    color: white;
+        -webkit-box-shadow: 7px 7px 0px 0px rgba(50, 50, 50, 0.19);
+-moz-box-shadow:    7px 7px 0px 0px rgba(50, 50, 50, 0.19);
+box-shadow:         7px 7px 0px 0px rgba(50, 50, 50, 0.19);
+}
+
+button.btn.btn-primary.btn-lg.donate {
+    float: right;
+}
+
+.obs-title { margin-left: 221px;}
+
+@media (min-width: 992px)
+.col-md-3 {
+    width: 23% !important;
+    padding: 5px;
+}

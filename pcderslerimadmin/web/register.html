@@ -1,0 +1,114 @@
+<style>
+    .is-disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+</style>
+<div class="col-sm-5 content" id="user_field" ng-controller="RegisterCtrl">
+    <div style="margin:auto" class="centered form panel panel-default" >      
+        <div  id="login_form"  ng-class="{'is-disabled' : isDisabled}"> 
+            <div class="social">
+            </div>
+            <div class="panel-body" > 
+
+                <h4>
+                    <i class="fa fa-angle-right"></i>
+                    {{title}}
+                </h4>
+                <div class="form-group">
+
+                    <label class="control-label"></label>
+
+                    <div >
+                        <label class="control-label" style="color: red">{{status.nameError}}</label>
+                        <label class="control-label" style="isNameEmptyStyle">{{isNameEmptyText}}</label>
+                        <!--   <label class="control-label" style="{{isNameEmptyStyle}}">{{isNameEmptyText}}</label>-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">İsim:</label>
+                    <div >
+                        <input style="margin-bottom: 10px;" id="user_name" type="text" class="form-control"  ng-model="newUser.name"
+                               ng-blur="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class=" control-label"></label>
+
+                    <div class="">
+                        <label class="control-label" style="color: red">{{status.surnameError}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class=" control-label">Soy isim:</label>
+                    <div class="">
+                        <input style="margin-bottom: 10px;" type="text" class="form-control"
+                               ng-model="newUser.surname">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class=" control-label"></label>
+
+                    <div class="">
+                        <label class="control-label" style="color: red">{{status.alreadyExistError}}</label>
+                        <label class="control-label" style="color: red">{{status.emailError}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class=" control-label">Email:</label>
+                    <div class="">
+                        <input id="user_email" style="margin-bottom: 10px;" type="text" class="form-control" 
+                               ng-model="newUser.email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class=" control-label"></label>
+
+                    <div class="">
+                        <label class="control-label" style="color: red">{{status.passwordError}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class=" control-label">Şifre(min. 5 karakter):</label>
+                    <div class="">
+                        <input style="margin-bottom: 10px;" type="password" class="form-control" 
+                               ng-model="newUser.password" ng-blur="checkPasswordLength()">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class=" control-label"></label>
+
+                    <div class="">
+                        <label class="control-label" style="color: red">{{status.passwordRepeatError}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class=" control-label">Şifre tekrar:</label>
+                    <div class="">
+                        <input style="margin-bottom: 10px;" type="password" class="form-control" 
+                               ng-model="newUser.passwordRepeat" ng-blur="checkPasswordSame()">
+                    </div>
+
+
+                </div>
+
+                <!--                <div class="form-group">
+                                    <label class="control-label" style="color: red">{{status.conditionsError}}</label><br/>
+                                    <label>
+                                        <input ng-model="conditionsAgree"  type="checkbox" name="terms" data-class="blue">  
+                                        <span class="check-box">Şartları okudum ve kabul ediyorum
+                                            <a style="color:red" href="page/terms.html">şartlar</a>
+                                        </span>
+                                    </label>
+                                </div>           -->
+                {{status.success}}
+                <button type="button" class="btn btn-primary" ng-click="addUser()">Bitdi</button>
+            </div>        
+        </div>      
+    </div>
+</div>

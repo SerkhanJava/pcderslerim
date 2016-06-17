@@ -1,0 +1,63 @@
+
+
+    <style>
+        .selectedItem{
+            background-color: #f8cb1c;
+        }
+    </style>
+
+    <div class="col-md-8 content">
+        <div class="panel panel-default type-video">
+            <!-- Pcderslerim Below Post Title -->
+
+            <div  google-adsense></div>
+
+            <div class="panel-heading">
+                Videolar
+           <!--     <a ng-show="!moreVideos" 
+                   ng-click="setRoute('/videos#begin=0&end=16&more=true')" 
+                   class="btn btn-primary btn-xs pull-right">
+                    Daha fazla
+                </a>-->
+            </div>
+            <ul class="media media-latest" ng-repeat="container in videoContainers">
+                <li ng-repeat="video in container.videos" class='video video-13' id='media-165'>
+                    <div class='mediathumb'>
+                        <a ng-click="setRoute('video=' + video.id)"
+                           title='{{video.title}}'>
+                            <span class='mediabg' 
+                                  style='background-image:url("{{video.youtubeThumb}}")'> 
+                            </span>
+
+                        </a>                  	                  
+                    </div> 
+                    <div class='mediainfo' >
+                        <h4>
+                            <a ng-click="setRoute('video=' + video.id);
+                               "
+                               title='{{video.title}}' class='medialink'>
+                                {{video.title}}</a>
+                        </h4>                               
+                    </div>
+                </li>
+                <div google-adsense></div>
+
+            </ul>  
+            <div class="panel-body" ng-show="moreVideos">
+                <ul class="pagination pagination-sm">     
+
+                    <li ng-repeat="r in range" style='display:inline-block;margin-left:2px'>
+
+                        <span  ng-style="{'background-color':r.style}" 
+                               ng-click="setRoute('videos#begin=' + r.begin + '&end=' + r.end + '&more=true')" 
+                               style="cursor:pointer;">
+                            {{$index + 1}}
+                        </span> 
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>

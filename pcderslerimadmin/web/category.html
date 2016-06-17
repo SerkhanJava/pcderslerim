@@ -1,0 +1,67 @@
+
+<div ng-controller="CategoryCtrl">
+     
+        <h4><i class="fa fa-angle-right"></i>Category</h4>
+        <button class="btn btn-round btn-success" style="margin-left:5px"
+                 data-toggle="modal" data-target="#basicModal"
+                ng-click="loadCategory({},'Add Category')"  >Add new Category</button>
+        <table class="table table-striped table-condensed table-hover" >
+            <thead >
+                <tr>
+                    <th>No</th>
+                    <th >Type</th>
+                    <th style="text-align:center" colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in categories">
+                    <td>{{$index+1}}</td>
+                    <td>{{x.type}} </td>
+                    <td><button type="submit" data-toggle="modal" data-target="#basicModal"  class="btn btn-primary btn-xs" 
+                                ng-click="loadCategory(x,'Update Category')" >Update</td>
+                    <td><button type="submit" class="btn btn-danger btn-xs" ng-click="loadForDeleting(x)"
+                                data-toggle="modal" data-target="#deleteModal"
+                                >Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+         
+
+    <div class="modal fade" id="basicModal"  role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="dialogbox"> 
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
+                </div>
+                <div class="modal-body">
+                    
+                   <input type="text" class="form-control" placeholder="category name" ng-model="newcategory.type">
+             
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close_dlg">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="close_dlg" ng-click="addCategory();reloadRoute()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div class="modal fade" id="deleteModal"  role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="dialogbox"> 
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Delete Category?</h4>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close_dlg">No</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="close_dlg" ng-click="deleteCategory();reloadRoute()">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>     

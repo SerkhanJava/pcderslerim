@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<script async  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="col-md-8 content"  >   
+    <div class="panel panel-default type-video" >
+
+        <div class="panel-heading">
+            Eğitimler
+        </div>
+        
+        <ul class="media media-latest" ng-repeat="container in videoContainers">
+            <li ng-repeat="video in container.videos">
+                <div class='mediathumb'>
+                    <a ng-click="setRoute('video=' + video.id)" >
+                        <span class='mediabg' 
+                              style='background-image:url("{{video.youtubeThumb}}")'> 
+                        </span>
+                    </a>                  	                  
+                </div> 
+                <div class='mediainfo'>
+                    <h4>
+                        <a ng-click="setRoute('video=' + video.id);reloadPage()" class='medialink'>
+                            {{video.title | limitTo:45}}...
+                        </a>
+                    </h4> 
+                </div>
+            </li>
+        </ul>
+
+       
+            <ul class="pagination pagination-sm">                     
+                <li ng-repeat="r in range" style='display:inline-block;margin-left:2px'>
+
+                    <span  ng-show="pagination" ng-style="{'background-color':r.style}" 
+                           ng-click="setRoute('videos#begin=' + r.begin + '&end=' + r.end);" 
+                           style="cursor:pointer;">
+                        {{$index + 1}}
+                    </span> 
+
+                    <span  ng-show="paginationCategory" ng-style="{'background-color':r.style}" 
+                           ng-click="setRoute('videos#begin=' + r.begin + '&end=' + r.end + '&categoryId=' + r.categoryId)" 
+                           style="cursor:pointer;">
+                        {{$index + 1}}
+                    </span> 
+                    <span ng-show="paginationSearch" ng-style="{'background-color':r.style}" 
+                          ng-click="setRoute('videos#begin=' + r.begin + '&end=' + r.end + '&search=' + r.search)" 
+                          style="cursor:pointer;">
+                        {{$index + 1}}
+                    </span> 
+
+
+                </li>
+            </ul>
+      
+    </div>
+
+</div>

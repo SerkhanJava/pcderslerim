@@ -1,0 +1,169 @@
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+<!--SECTION MYVIDEO START -->
+<section class="col-md-8 content video">
+    <div class="video-player">          
+        <iframe ng-src='{{selectedVideo.url}}' frameborder='0' width='1280' height='450' scrolling='no' allowfullscreen>
+
+        </iframe>  
+    </div>
+    
+    <!--ARTICLE VIDEO PLAYER AND DESCRIPTION START -->
+    <article class="panel panel-default">
+        <div class="video-info panel-body" itemprop="video"
+             itemscope itemtype="http://schema.org/VideoObject">
+            <header>
+                <h1 itemprop="name">
+                    {{selectedVideo.title}}
+                </h1>
+            </header>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-9">
+
+                    <!--  <div class="g-ytsubscribe" data-channel="afganrasulov"></div>
+                        <script src="https://apis.google.com/js/plusone.js"></script>-->
+
+                    <iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" id="myDiv"
+                            style="position: static; top: 0px; width: 214px; margin: 0px; left: 0px; visibility: visible; 
+                            height: 30px;" tabindex="0" vspace="0" width="100%" 
+                            src="http://www.youtube.com/subscribe_embed?bsv&amp;usegapi=1&amp;channel=afganrasulov;" data-gapiattached="true">
+
+                    </iframe>
+
+<!--SOCIAL BUTTONS START -->
+                    <div  class="row" >
+                        <div class="col-md-2" >
+                            <div google-plus="myModel.gmailUrl"></div>
+                        </div>
+
+                        <div class="row col-md-4">
+                            <div fb-like="myModel.fbUrl"></div>
+                        </div>
+                    </div>
+<!--SOCIAL BUTTONS END   -->
+
+
+                </div>
+
+            </div>
+        <!--/.video-info -->
+        <article class="video-option">
+
+            <div class="video-description panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <p itemprop="description"  ng-class="{'this-description truncate' : !descriptionVisible}"
+                           class="ng-binding" ng-bind-html="selectedVideo.description | linky | nl2br"  >
+                        </p>
+
+                        <div  ng-show="descriptionVisible">
+                            <ul>
+                                <li style="list-style-type: none;padding-bottom: 5px;" 
+                                    ng-repeat="videoLink in selectedVideo.links">
+                                    <button class="videoLink"   type="button" style="color: white"
+                                            ng-click="goToLink(videoLink)">
+                                        {{videoLink.text}}
+                                    </button>
+                                    <h2 style="color:red">
+                                        {{selectedVideoLinkStatus}}
+                                    </h2 >
+                                </li>
+                                <li ng-if="!selectedVideo.links || selectedVideo.links.length == 0">
+                                    <button class="videoLink"   type="button" style="color: white"
+                                            ng-click="goToLink(null)">
+                                        Dosyaları İndirin
+                                    </button>
+                                    <h2  style="color:red">
+                                        {{selectedVideoLinkStatus}}
+                                    </h2>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>  
+
+            <a ng-click="goToLinkArea()">
+                <span class="downloadBtn" style="color: white;">Çalışma dosyaları indirmek için tıklayın</span>
+            </a>   
+            <!--  <a ng-click="contentVisible = !contentVisible" ng-show="selectedVideo.links.length > 0" class="toggle-description">İçeriği göster</a>-->
+
+
+            <!--   <div   class="modal fade" id="basicModal"  role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                   <div class="modal-dialog">
+                       <div class="modal-content" id="dialogbox"> 
+   
+                           <div class="modal-header" >
+                               <button type="button" class="close" id="close_dlg"
+                                       data-dismiss="modal" aria-hidden="true">&times;</button>
+                               <h4 class="modal-title" id="myModalLabel">
+            <!--    <span ng-if="isGuest()">Lutfen giriş yapınız<br></span>
+                <span ng-if="!isYoutubeSubscribed() && !isGuest()">Lutfen youtube abone olunuz<br></span>
+                <span ng-if="!isGooglePlussed() && isYoutubeSubscribed() && !isGuest()">Lutfen Google+ yaparak destek olunuz</span>
+            </h4>
+        </div>-->
+
+            <!-- <div class="modal-body" >
+                
+                 <div ng-if="isGuest()" >
+                     <ng-include src="'user/loginWrapper.html'"></ng-include>
+                 </div>-
+
+                 <div ng-if="!isYoutubeSubscribed() && !isGuest()" >
+
+                     <iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" id="myDiv"
+                             style="position: static; top: 0px; width: 214px; margin: 0px; left: 0px; visibility: visible; 
+                             height: 30px;" tabindex="0" vspace="0" width="100%" 
+                             src="https://www.youtube.com/subscribe_embed?bsv&amp;usegapi=1&amp;channel=afganrasulov;" data-gapiattached="true"></iframe>
+
+
+                 </div>
+
+                 <div ng-if="!isGooglePlussed() && isYoutubeSubscribed() && !isGuest()" >
+                     <div google-plus="myModel.gmailUrl"></div>
+                 </div>-->
+
+
+            <!--        </div>
+
+                    <div class="modal-footer">
+            <!--check  subscribe -->
+            <!--  <div ng-show="buttonPart">
+                  <button ng-show="1 < 0" type="button" data-toggle="modal" 
+                          data-target="#youtubeModal" >Next</button>
+                  <button ng-show="1 > 0" type="button" data-toggle="modal" 
+                          data-target="#googleModal" >Next</button>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div> -->
+
+
+        </article><!-- /.video-option   -->  
+ 
+    </article>
+        <!--ARTICLE VIDEO PLAYER AND DESCRIPTION END -->
+    <div   google-adsense></div>
+    
+    <!--FACEBOOK COMMENTS START -->
+    <section class='panel panel-default' id='comments' >
+        <div class="fb-comments"  data-width="900" data-numposts="5" data-colorscheme="light"
+             page-href='{{myModel.fbCommentUrl}}'
+             dyn-fb-comment-box></div>
+
+    </section>  
+    <!--FACEBOOK COMMENTS END   -->
+    </section>
+        <!--SECTION MYVIDEO END -->
+        
+
+

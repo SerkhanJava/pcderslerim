@@ -1,0 +1,160 @@
+@font-face {
+	font-family: "lyndacon";
+	src: url('lyndacon.eot?v=4.1.0');
+	src: url('lyndacon.eot?#iefix&amp;v=4.1.0') format('embedded-opentype'), url('lyndacon.woff') format('woff'), url('lyndacon.svg#lyndacon') format('svg');
+}
+
+.lyndacon {
+  display: inline-block;
+  font-family: "lyndacon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+}
+
+  .lyndacon.arrow-down:before { content: "\EA01" }
+  .lyndacon.arrow-left:before { content: "\EA02" }
+  .lyndacon.arrow-right:before { content: "\EA03" }
+  .lyndacon.arrow-up:before { content: "\EA04" }
+  .lyndacon.assessments:before { content: "\EA05" }
+  .lyndacon.auto-scroll-transcript-up:before { content: "\EA06" }
+  .lyndacon.avatar:before { content: "\EA07" }
+  .lyndacon.bookmark:before { content: "\EA08" }
+  .lyndacon.caret-down:before { content: "\EA09" }
+  .lyndacon.caret-grey:before { content: "\EA0A" }
+  .lyndacon.cat-1:before { content: "\EA0B" }
+  .lyndacon.cat-1665:before { content: "\EA0C" }
+  .lyndacon.cat-1792:before { content: "\EA0D" }
+  .lyndacon.cat-20:before { content: "\EA0E" }
+  .lyndacon.cat-2057:before { content: "\EA0F" }
+  .lyndacon.cat-2058:before { content: "\EA10" }
+  .lyndacon.cat-29:before { content: "\EA11" }
+  .lyndacon.cat-40:before { content: "\EA12" }
+  .lyndacon.cat-50:before { content: "\EA13" }
+  .lyndacon.cat-70:before { content: "\EA14" }
+  .lyndacon.cat-78:before { content: "\EA15" }
+  .lyndacon.cat-88:before { content: "\EA16" }
+  .lyndacon.catalog:before { content: "\EA17" }
+  .lyndacon.cert-business:before { content: "\EA18" }
+  .lyndacon.cert-core-star:before { content: "\EA19" }
+  .lyndacon.cert-core:before { content: "\EA1A" }
+  .lyndacon.cert-creative:before { content: "\EA1B" }
+  .lyndacon.cert-guide:before { content: "\EA1C" }
+  .lyndacon.cert-inspirational:before { content: "\EA1D" }
+  .lyndacon.cert-partner:before { content: "\EA1E" }
+  .lyndacon.cert-path:before { content: "\EA1F" }
+  .lyndacon.cert-playlist:before { content: "\EA20" }
+  .lyndacon.cert-quiz:before { content: "\EA21" }
+  .lyndacon.cert-reviews:before { content: "\EA22" }
+  .lyndacon.cert-technology:before { content: "\EA23" }
+  .lyndacon.certificates:before { content: "\EA24" }
+  .lyndacon.checkmark:before { content: "\EA25" }
+  .lyndacon.close-x:before { content: "\EA26" }
+  .lyndacon.closed-captioning:before { content: "\EA27" }
+  .lyndacon.code:before { content: "\EA28" }
+  .lyndacon.copy:before { content: "\EA29" }
+  .lyndacon.devices:before { content: "\EA2A" }
+  .lyndacon.download:before { content: "\EA2B" }
+  .lyndacon.drag:before { content: "\EA2C" }
+  .lyndacon.ent-academic:before { content: "\EA2D" }
+  .lyndacon.ent-across-devices:before { content: "\EA2E" }
+  .lyndacon.ent-all-courses:before { content: "\EA2F" }
+  .lyndacon.ent-all-staff:before { content: "\EA30" }
+  .lyndacon.ent-author-circle:before { content: "\EA31" }
+  .lyndacon.ent-author:before { content: "\EA32" }
+  .lyndacon.ent-back-to-top:before { content: "\EA33" }
+  .lyndacon.ent-business:before { content: "\EA34" }
+  .lyndacon.ent-certificates-completion:before { content: "\EA35" }
+  .lyndacon.ent-checkmark:before { content: "\EA36" }
+  .lyndacon.ent-classroom:before { content: "\EA37" }
+  .lyndacon.ent-clock-at-your-pace:before { content: "\EA38" }
+  .lyndacon.ent-code-window:before { content: "\EA39" }
+  .lyndacon.ent-curricula:before { content: "\EA3A" }
+  .lyndacon.ent-download-doc:before { content: "\EA3B" }
+  .lyndacon.ent-enrich-independent:before { content: "\EA3C" }
+  .lyndacon.ent-exercise-files:before { content: "\EA3D" }
+  .lyndacon.ent-government:before { content: "\EA3E" }
+  .lyndacon.ent-integrate:before { content: "\EA3F" }
+  .lyndacon.ent-it-migration:before { content: "\EA40" }
+  .lyndacon.ent-ldc-logo:before { content: "\EA41" }
+  .lyndacon.ent-list:before { content: "\EA42" }
+  .lyndacon.ent-lock:before { content: "\EA43" }
+  .lyndacon.ent-measure-success:before { content: "\EA44" }
+  .lyndacon.ent-new-content:before { content: "\EA45" }
+  .lyndacon.ent-note-taking:before { content: "\EA46" }
+  .lyndacon.ent-onboarding:before { content: "\EA47" }
+  .lyndacon.ent-people-two:before { content: "\EA48" }
+  .lyndacon.ent-place:before { content: "\EA49" }
+  .lyndacon.ent-play:before { content: "\EA4A" }
+  .lyndacon.ent-playlist-no-circle:before { content: "\EA4B" }
+  .lyndacon.ent-provide-answers:before { content: "\EA4C" }
+  .lyndacon.ent-public-library-patrons:before { content: "\EA4D" }
+  .lyndacon.ent-request-contact:before { content: "\EA4E" }
+  .lyndacon.ent-request-info:before { content: "\EA4F" }
+  .lyndacon.ent-search-keywords:before { content: "\EA50" }
+  .lyndacon.ent-skill-levels:before { content: "\EA51" }
+  .lyndacon.ent-skills-gap:before { content: "\EA52" }
+  .lyndacon.ent-star:before { content: "\EA53" }
+  .lyndacon.ent-support-it:before { content: "\EA54" }
+  .lyndacon.exclaim:before { content: "\EA55" }
+  .lyndacon.exercise-files:before { content: "\EA56" }
+  .lyndacon.expert-teachers:before { content: "\EA57" }
+  .lyndacon.eye:before { content: "\EA58" }
+  .lyndacon.facebook:before { content: "\EA59" }
+  .lyndacon.feedback:before { content: "\EA5A" }
+  .lyndacon.google:before { content: "\EA5B" }
+  .lyndacon.groups:before { content: "\EA5C" }
+  .lyndacon.history:before { content: "\EA5D" }
+  .lyndacon.home:before { content: "\EA5E" }
+  .lyndacon.infinity:before { content: "\EA5F" }
+  .lyndacon.info-outlined:before { content: "\EA60" }
+  .lyndacon.info:before { content: "\EA61" }
+  .lyndacon.linkedin:before { content: "\EA62" }
+  .lyndacon.list:before { content: "\EA63" }
+  .lyndacon.lock:before { content: "\EA64" }
+  .lyndacon.lynda-linkedin-logo-old:before { content: "\EA65" }
+  .lyndacon.lynda-linkedin-logo:before { content: "\EA66" }
+  .lyndacon.mail:before { content: "\EA67" }
+  .lyndacon.member:before { content: "\EA68" }
+  .lyndacon.menu:before { content: "\EA69" }
+  .lyndacon.message:before { content: "\EA6A" }
+  .lyndacon.more:before { content: "\EA6B" }
+  .lyndacon.move:before { content: "\EA6C" }
+  .lyndacon.notes:before { content: "\EA6D" }
+  .lyndacon.notifications:before { content: "\EA6E" }
+  .lyndacon.pencil:before { content: "\EA6F" }
+  .lyndacon.play-circle:before { content: "\EA70" }
+  .lyndacon.play:before { content: "\EA71" }
+  .lyndacon.player-maximize-full-screen:before { content: "\EA72" }
+  .lyndacon.player-minimize-full-screen:before { content: "\EA73" }
+  .lyndacon.player-mute:before { content: "\EA74" }
+  .lyndacon.player-next-video:before { content: "\EA75" }
+  .lyndacon.player-pause:before { content: "\EA76" }
+  .lyndacon.player-play:before { content: "\EA77" }
+  .lyndacon.player-pop-out:before { content: "\EA78" }
+  .lyndacon.player-prev-video:before { content: "\EA79" }
+  .lyndacon.player-rewind:before { content: "\EA7A" }
+  .lyndacon.player-settings:before { content: "\EA7B" }
+  .lyndacon.player-volume:before { content: "\EA7C" }
+  .lyndacon.playlisttype-assigned:before { content: "\EA7D" }
+  .lyndacon.playlisttype-following:before { content: "\EA7E" }
+  .lyndacon.playlisttype-personal:before { content: "\EA7F" }
+  .lyndacon.plus-sign:before { content: "\EA80" }
+  .lyndacon.popular:before { content: "\EA81" }
+  .lyndacon.print-outline:before { content: "\EA82" }
+  .lyndacon.question-solid:before { content: "\EA83" }
+  .lyndacon.question:before { content: "\EA84" }
+  .lyndacon.rss:before { content: "\EA85" }
+  .lyndacon.search:before { content: "\EA86" }
+  .lyndacon.share-outline:before { content: "\EA87" }
+  .lyndacon.share:before { content: "\EA88" }
+  .lyndacon.topic:before { content: "\EA89" }
+  .lyndacon.trash:before { content: "\EA8A" }
+  .lyndacon.twitter:before { content: "\EA8B" }
+  .lyndacon.user:before { content: "\EA8C" }

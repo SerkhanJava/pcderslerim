@@ -1,0 +1,18 @@
+  <div ng-controller="VideoCtrl">
+             <div ng-show="urlPart">
+                 <div ng-repeat="x in videos" style="height:50px;background-color: #E8E8E8 ;margin:10px">
+                    <div >{{x.url}}  <br>
+               <!--    <button type="submit"  class="btn btn-primary btn-xs" ng-click="loadVideo(x)" >Read More-->
+                       <span style="color:blue" ng-click="loadVideo(x,'')">Read More</span>
+                   </div>
+                </div>
+            </div>
+             
+           <div ng-show="descPart">       
+                 <div style="margin:10px">
+                   <button type="button" style="margin-bottom: 10px;" class="badge bg-success" ng-click=" urlPart = true; descPart = false" >Back</button><br>
+                   <input type="text"  ng-model="newvideo.description">
+                   <input type="text"  ng-model="newvideo.categoryId.type">
+                 </div>
+         </div>    
+     </div>     

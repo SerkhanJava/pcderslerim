@@ -1,0 +1,9 @@
+<div ng-switch on="selectedPage" ng-controller="UserCtrl">
+    
+    <div ng-switch-when="login" >
+        <ng-include src="'user/login.html'"></ng-include>
+    </div>
+   <div ng-switch-when="register">
+        <ng-include src="'user/register.html'"></ng-include>
+    </div>
+</div>

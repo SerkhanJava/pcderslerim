@@ -1,0 +1,166 @@
+.main {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.taleft {
+    text-align: left !important;
+}
+
+.br3 {
+    border-radius: 3px;
+}
+
+.lsdisc {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+
+/* MARGINS BEGIN */
+.mtop0 {
+    margin-top: 0 !important;
+}
+
+.mtop20 {
+    margin-top: 20px !important;
+}
+
+.mtop40 {
+    margin-top: 40px !important;
+}
+
+.mtop60 {
+    margin-top: 60px !important;
+}
+/* MARGINS END */
+
+
+/* PADDINGS BEGIN */
+.p30 {
+    padding: 30px !important;
+}
+/* PADDDINGS END */
+
+
+/* BUTTONS BEGIN */
+.btn {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.btnsmall {
+    border: 0;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 7px 14px;
+    border-radius: 3px;
+}
+
+.blue {
+    background: #3eaae2;
+    box-shadow: 0 3px 0 #3d81be;
+}
+
+.blue:hover {
+    background: #57b1e0;
+}
+
+.blue:active {
+    box-shadow: none;
+    background: #3696c8;
+}
+
+.gray {
+    background: #646567;
+}
+
+.gray:hover {
+    background: #707173;
+}
+
+.gray:active {
+    background: #505153;
+}
+
+.ltblue {
+    background: #3eaae2;
+}
+
+.ltblue:hover {
+    background: #57b1e0;
+}
+
+.ltblue:active {
+    background: #3696c8;
+}
+
+.ltgray {
+    color: #a0a1a3;
+    background: #f7f8fa;
+    border: 1px solid #eaebed;
+}
+
+.ltgray:hover {
+    background: #fcfdff;
+    border: 1px solid #eff0f2;
+}
+
+.ltgray:active {
+    color: #909193;
+    background: #f4f5f7;
+    border: 1px solid #e7e8ea;
+}
+/* BUTTONS END */
+
+
+/* MESSAGE BEGIN */
+.message {
+    padding: 50px;
+    text-align: center;
+    border-radius: 4px;
+    background: #fafafa;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.message h4 {
+    color: #666;
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.message h5 {
+    color: #666;
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.bluems {
+    background: #E5F8FF;
+    border: 1px solid #CEE8FF;
+}
+/* MESSAGE END */

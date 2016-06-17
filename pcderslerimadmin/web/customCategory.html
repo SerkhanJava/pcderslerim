@@ -1,0 +1,62 @@
+<div style="width: 100%;display: table;" ng-class="{'http_disabled':httpProcess}">
+
+    <div style="display: table-row">
+        <div style="width: 600px; display: table-cell;"> 
+            Category Name:<br>
+            <select 
+                style="padding: 0px" 
+                class="btn btn-theme03"  
+                ng-model="newcustomcategory.categoryId1"
+                ng-change="selectRightPanel(newcustomcategory.categoryId1.id)"
+                ng-options="categoryId1.type for categoryId1 in categories">
+            </select>
+
+            <!--    ng-change="setRoute('custom#begin=0&end=10&categoryId1=' + newcustomcategory.categoryId1.id)" -->
+            <br><br>
+            <input type="text"  ng-model="newcategory.type">
+            <button type="submit" ng-click="addCategory()">add</button>
+
+        </div>
+        <div style="display: table-cell;"> 
+            Category Name: <br>
+            <!-- <select 
+                 style="width: 80px;padding: 0px" 
+                 class="btn btn-theme03"  
+                 ng-model="newcustomcategory.categoryId2"
+                 ng-options="categoryId2.type for categoryId2 in categories">
+             </select>
+
+             <button type="submit" ng-click="addCustomCategory()">add</button>
+             <br><br>
+             <div >
+                 <ul>
+                     <li style="margin-left:-8%" ng-repeat="x in selectedCategoryId2">
+                         {{$index+1}}.{{x.categoryId2.type}}
+                     </li>
+                 </ul>
+             </div>-->
+
+            <dl class="dropdown"> 
+
+                <dt>
+                <a href="">
+                    <span  class="hida">Select</span>    
+                    <p class="multiSel" style="display:none"></p>  
+                </a>
+                </dt>
+
+                <dd>
+                    <div  class="mutliSelect" >
+
+                    </div>
+                </dd>
+
+            </dl><br>
+
+
+        </div>
+
+    </div>
+
+
+</div>

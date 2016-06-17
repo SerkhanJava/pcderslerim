@@ -1,0 +1,40 @@
+<div class="col-md-8 content"  ng-controller="VideoCtrl">   
+    <div class="panel panel-default type-video" >
+        <div class="panel-heading">
+            Videolar
+        </div>
+
+        <ul class="media media-latest">
+            <li ng-repeat="video in videos">
+                <div class='mediathumb'>
+                    <a ng-click="setRoute('video=' + video.id)" >
+                        <span class='mediabg' 
+                              style='background-image:url("{{video.youtubeThumb}}")'> 
+                        </span>
+                    </a>                  	                  
+                </div> 
+                <div class='mediainfo'>
+                    <h4>
+                        <a ng-click="setRoute('video=' + video.id)" class='medialink'>
+                            {{video.title | limitTo:45}}...
+                        </a>
+                    </h4> 
+                </div>
+            </li>
+        </ul>
+
+        <div class="panel-body">
+           <ul class="pagination">                     
+                <li ng-repeat="r in range" style='display:inline-block;margin-left:5px'>
+
+                    <span  ng-style="{'background-color':r.style}" 
+                           ng-click="setRoute('videos#begin=' + r.begin + '&end=' + r.end+'&search='+r.search)" 
+                           style="cursor:pointer;">
+                        {{$index + 1}}
+                    </span> 
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+
+<div class="form-panel" ng-controller="VideoCtrl"  >
+
+    <h4><i class="fa fa-angle-right"></i>Seo</h4>
+    <hr>
+
+
+    <div ng-repeat="x in videos" class="col-md-12 video video-13"  id='media-165'>
+        <div class="col-md-6">
+            
+            <div class="col-md-6"> 
+                Seo title
+                <input style="margin-bottom: 10px;" type="text" class="form-control" placeholder="type title" ng-model="x.seoTitle">
+            </div> 
+            <div class="col-md-6"> 
+                Focused Word
+                <input style="margin-bottom: 10px;" type="text" class="form-control" placeholder="type focused word" ng-model="x.focusedWord">
+            </div>
+            <div class="col-md-12">
+                Seo description
+                <textarea  class="form-control" rows="10" placeholder="seo description" ng-model="x.seoDescription" ></textarea>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            
+            <div class="col-md-6"> 
+                Seo preview
+                <h3 style="color:blue">{{x.seoTitle}}</h3
+                <p style="color:green">{{x.url}}</p>
+                <p>{{x.seoDescription}}</p>
+             </div>
+             <div class="col-md-6"> 
+                <img ng-src="{{x.youtubeThumb}}" alt="{{x.title}}" height="200" width="200"/>  
+             </div>
+
+        </div>
+        
+       
+        
+        <span class="col-md-12"><br/><hr/></span>
+       
+    </div>
+ 
+       <span style="color: green">{{statusVideo}}</span>
+    <button type="submit"  class="btn btn-round btn-success"
+            ng-click="saveVideo()" >Update</button>
+
+
+  
+   <ul class="pagination pagination-sm">                     
+                <li ng-repeat="r in range" style='display:inline-block;margin-left:5px'>
+
+                    <span  ng-style="{'background-color':r.style}" 
+                           ng-click="setRoute('/seo#begin=' + r.begin + '&end=' + r.end + '')" 
+                           style="cursor:pointer;">
+                        {{$index + 1}}
+                    </span> 
+
+                </li>
+            </ul>
+ 
+
+</div>

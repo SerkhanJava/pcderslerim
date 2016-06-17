@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en" >
+
+    <head>      
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+
+        <title>Pcderslerim | Online Photoshop Dersleri</title>      
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!-- Latest compiled and minified CSS -->
+        <link rel="alternate" hreflang="tr" href="http://www.pcderslerim.com" />
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+    </head> 
+    <body ng-controller="IndexCtrl" class="color-1">
+        <div id="fb-root"></div> 
+        <script>
+                    (
+                            function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id))
+                                    return;
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=894184297341025";
+                                fjs.parentNode.insertBefore(js, fjs);
+
+                            }
+                    (document, 'script', 'facebook-jssdk')
+
+                            );
+        </script>
+
+        <section class="col-md-12 container-fluid">
+            <h4 class="top-notification" >
+                Sitede kayıt olan <strong>ilk 5000 kişiye Özel Grafik Materialleri hediye edilecektir.</strong> <strong>Facebook Giriş yaparak kayıt olabilirsiniz.</strong> Tasarımlar Facebook'la kayıt olduğunuz E-mail adresinize gönderilecektir. <strong>Tasarım dosyaları ilk 5000 kişi kayıt yaptıktan <span style="color:yellow;">sonra</span> gönderilecekir.</strong>
+            </h4>
+        </section>
+        
+        <header>
+            <div class="container">
+                <div class="navbar navbar-inverse navbar-static-top top-nav">
+                   
+			<h1 class="col-md-1 logo">
+
+			<a href="http://www.pcderslerim.com/" onclick="_gaq.push(['_trackEvent','Tıklamak','Header Logo', 'Ana sayfaya dönüş']);" title="Pcderslerim.com Anasayfa"><strong>indir</strong></a>
+			</h1>
+             
+                     
+                    <div class="col-md-3 nav col-md-offset-8">           
+                        <ul class="nav nav-pills">
+
+                            <li class="page_item page-item-12 button" ng-show='isGuest()'>
+                                <button href="#login">Üye girişi</button></li>
+
+                            <li class="page_item page-item-12 active" ng-show='isGuest()'>
+
+                                <button class="active" ng-click="FBLogin()">
+                                    Facebook Giriş
+                                </button>
+
+                            </li>
+
+                            <li class="page_item page-item-13" ng-hide='isGuest()'>
+                                <button ng-click="logoutUser()">Çıkış {{loggedInUser()}}
+                                </button>
+                            
+                            </li>
+                            
+                            <li>  
+                                <div id="status">
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div> 
+
+                </div>
+            </div>      
+        </header>
+
+        <section id='main-menu'>
+
+            <div class='container'>
+                <ul class='navbar top-cat-menu'>
+                    <li class="active"><a ng-click="setRoute('/videos#begin=0&end=16')"><span class='fa fa-home'></span>Ana sayfa</a></li> 
+                    <!--  <li><a ng-click="setRoute('/videos#begin=0&end=16&more=true')" ><span class='fa fa-youtube-play'></span> Videolar</a></li>
+                    --> 
+                    <li>
+                        <a>
+                            <span class='fa fa-newspaper-o'></span> Blog(Çok yakında)
+                        </a>
+                    </li> 
+                    <!--  <li>
+                          <a ng-click="setRoute('/pictures')">
+                              <span  class='fa fa-picture-o'></span> Nasıl olmuş?
+                          </a>
+                      </li>-->
+
+                </ul>
+            </div>
+        </section> 
+        
+        <section class="section-groups">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4 hidden-xs sidebar">
+
+                        <div class='panel panel-default' id='sidebar_social'>
+
+                            <div class="fb-page" 
+                                 data-href="https://www.facebook.com/pcderslerim" 
+                                 data-width="300" data-height="400"
+                                 data-hide-cover="false" data-show-facepile="true" 
+                                 data-show-posts="false">
+                                <div class="fb-xfbml-parse-ignore">
+                                    <blockquote cite="https://www.facebook.com/pcderslerim">
+                                        <a href="https://www.facebook.com/pcderslerim">
+                                            pcderslerim | online bilgisayar derslerim
+                                        </a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class='panel-body' style='padding-bottom: 10px'>
+                                <div class="pull-left">
+                                    <a href="https://twitter.com/pcderslerim" class="twitter-follow-button" 
+                                       data-show-count="false" data-show-screen-name="false">
+                                        Follow Us
+                                    </a>
+                                    <script>!function (d, s, id) {
+                                                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                                    if (!d.getElementById(id)) {
+                                                        js = d.createElement(s);
+                                                        js.id = id;
+                                                        js.src = p + '://platform.twitter.com/widgets.js';
+                                                        fjs.parentNode.insertBefore(js, fjs);
+                                                    }
+                                                }(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                                <div class="pull-left" style="width: 80px; max-width:80px; margin-left: 20px;">
+                                    <iframe style="max-width:100px; max-height: 25px; border:none; overflow:hidden; height:21px;" 
+                                            src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pcderslerim&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21" 
+                                            scrolling="no" frameborder="0"  allowTransparency="true">
+
+                                    </iframe>
+                                </div>
+                                <div class="pull-left" style="width: 80px; margin-left: 20px;">
+                                    <script type="text/javascript"
+                                            src="https://maps.googleapis.com/maps/api/js?libraries=geometry">
+                                    </script>
+                                    <script type="text/javascript"
+                                            src="https:/apis.google.com/js/platform.js">
+                                    </script> 
+
+                                    <div class="g-plusone" data-size="medium" data-count="true"
+                                         data-href="https://plus.google.com/+afganrasulov"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class='panel panel-default' id='sidebar_categories'>
+                            <div class='panel-heading'>Kategoriler</div>
+                            <div >
+                                <ul class='categories left-cat-menu'>
+                                    <li>
+                                        
+                                        <a ng-click="setRoute('/videos#begin=0&end=10')" title='Hepsi'>Hepsi</a>
+                                    </li>
+
+                                    <li ng-repeat="category in categories">
+                                        
+                                        <a ng-click="setRoute('/videos#begin=0&end=16&categoryId=' + category.id)" title='{{category.type}}'>{{category.type}}</a></li>
+
+                                </ul>
+                            </div>
+                        </div> 
+
+                    </div>
+
+                    <div class="col-md-8" google-adsense></div>
+                    <div class="col-md-8 search">
+                        <!--  <form action="#"  id="main-search">-->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <label for="search-input" style="margin:0">
+                                    <i class="fa fa-search" ></i>
+                                </label>
+                            </span>
+                            <input type="text" class="form-control" id="search-input" 
+                                   
+                                   placeholder="Hangı eğitimi aramamı istersin...?"
+                                   ng-model="word"
+                                   ng-change="setRoute('videos#begin=0&end=16&search=' + word)"           
+                                   autocomplete="off">
+                        </div>
+                        <!--   </form>-->
+                    </div> 
+                    <span  ng-view >
+
+                    </span>
+                </div>
+            </div>
+        </section> 
+        
+        
+        <footer>
+            <div class="container">
+                <div class="row" style="background: #616161;">
+                <h2><a ng-click="setRoute('/main')" style="color: white;">Pcderslerim | Photoshop Dersleri &copy; 2015 Tüm hakları duyarlı insanların.</a>
+            </h2>  
+            </div>   
+            </div>    
+        </footer>
+
+        <div class="this-return-data"></div>
+
+        <script src='http://connect.facebook.net/en_US/sdk.js'></script>
+        <script async  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <script async  src="//pagead2.googlesyndication.com/pagead/js/show_ads_impl.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-cookies.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-sanitize.js"></script>
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+
+
+        <script src="assets/routing.js"></script>
+        <script src="assets/angular.js"></script>
+        <script src="assets/angulike.js"></script>
+        <!--         <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>-->
+
+    </body>
+
+</html>

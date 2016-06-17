@@ -1,0 +1,276 @@
+<div >
+
+    <div class="form-panel" >
+        <div ng-show="tablePart">
+            <div class="col-md-12">
+                <div class="col-md-8">
+                    <div class="col-md-2">
+                        <h4><i class="fa fa-angle-right"></i>Video</h4>
+                    </div>              
+                    <div class="col-md-3">
+                        <button class="btn btn-round btn-success" style="margin-left:5px" 
+                                ng-click="loadVideo({}, 'Add video')"  >Add new Video</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-round btn-success" style="margin-left:5px" 
+                                ng-click="synchroneVideosFromYoutube()"  >Synchronize Youtube</button>
+
+                        <button class="btn btn-round btn-success" style="margin-left:5px" 
+                                ng-click="synchroneVideosFromYoutube(null, true)"  >Update Youtube</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    {{synchSatus}}
+                    {{synchSatusFinished}}
+                </div>
+            </div>
+            <hr>
+            <br>
+            <br>
+
+            <table class="table table-striped table-condensed table-hover" >
+                <thead>
+                    <tr>
+                        <th>No:</th>
+                        <th >Title</th>
+                        <th >Thumbnail</th>
+                        <!-- <th >Description</th>-->
+                        <th >Date</th>
+                        <th >Type</th>
+                        <th >Text</th>
+                        <th >Url</th>
+                        <th ></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="video in videos">
+                        <td>{{$index + 1}}</td>
+                        <td style="width: 100px">{{video.title}}</td>
+                        <td>
+                            <img ng-src="{{video.youtubeThumb}}" alt="{{video.title}}" height="90" 
+                                 width="110"/><br>
+                            <a href="{{video.url}}">{{video.url}}</a> 
+                            
+                        </td>
+                        <td>{{video.date|date:'dd-MM-yyyy'}}</td>
+                        <td>
+                            <dl class="dropdown"> 
+
+                                <dt>
+                                <a href="">
+                                    <span  class="hida">Select</span>    
+                                    <p class="multiSel" style="display:none"></p>  
+                                </a>
+                                </dt>
+
+                                <dd>
+                                    <div  class="mutliSelect" id="{{video.id}}">
+
+                                    </div>
+                                </dd>
+
+                            </dl>
+                        </td>
+                        <td colspan="2">
+                            <table> 
+
+                                <tr ng-repeat="videoLink in video.links"  >
+                                    <td style="padding-right: 5px;padding-bottom: 5px"><input type="text" ng-model="videoLink.text" /></td>
+                                    <td style="padding-right: 5px;padding-bottom: 5px"><input type="text" ng-model="videoLink.url" /></td>
+                                    <td style="padding-bottom: 5px">
+                                        <button class="btn btn-primary btn-xs"  
+                                                ng-click="saveVideoLink(videoLink);
+                                                            reloadRoute()">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                    </td>
+                                    <td style="padding-bottom: 5px">       
+                                        <button class="btn btn-danger btn-xs" ng-click="deleteVideoLink(video, videoLink);
+                                                    reloadRoute()"><i class="fa fa-trash-o "></i></button>
+                                    </td>
+                                </tr>     
+
+                                <tr ng-show="true">
+
+                                    <td style="padding-right: 5px;">
+                                        <input  type="text"  ng-init="newvideoLink[video.id].text = 'dosyaları indirin'"
+                                                ng-model="newvideoLink[video.id].text"   placeholder="dosyaları indirin">
+                                    </td>
+                                    <td style="padding-right: 5px;">
+                                        <input  type="text" 
+                                                ng-model="newvideoLink[video.id].url"  placeholder="type url">
+                                    </td>
+
+                                    <td>  
+                                        <button class="btn btn-success btn-xs"  ng-click="addVideoLink(video);
+                                                reloadRoute()">save</button>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+
+                        </td>
+
+                        <td> 
+                            <button style="margin-bottom:10px;" type="submit"  class="btn btn-primary btn-xs" 
+                                    ng-click="loadVideo(video, 'Update video')">Update</button><br>
+
+                            <button type="submit" class="btn btn-danger btn-xs" 
+                                    data-toggle="modal" data-target="#deleteModal"
+                                    ng-click="loadForVideoDeleting(video)" > Delete</button><br>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <!--pagination-->      
+            <ul class="pagination pagination-sm">                     
+                <li ng-repeat="r in range" style='display:inline-block;margin-left:5px'>
+
+                    <span  ng-style="{'background-color':r.style}" 
+                           ng-click="setRoute('/videos#begin=' + r.begin + '&end=' + r.end + '')" 
+                           style="cursor:pointer;">
+                        {{$index + 1}}
+                    </span> 
+
+                </li>
+            </ul>
+
+
+
+
+
+        </div>
+
+
+
+        <!--update -->        
+        <div ng-show="updatePart">
+
+            <h4><i class="fa fa-angle-right"></i>{{title}}</h4>
+            <button type="button" style="margin-bottom: 10px;" class="badge bg-success" ng-click="tablePart = true;
+                updatePart = false"  >Back</button><br>
+
+            <span style='color:red' ng-show='addVideoFilter.url'>type url</span>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Title:</label>
+                <div class="col-sm-10"><input class="form-control"  style="margin-bottom: 10px;"   ng-model="newvideo.title"></div></div>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Url:</label>
+                <div class="col-sm-10">
+                    <input style="margin-bottom: 10px;" 
+                           type="text" 
+                           class="form-control"  
+                           ng-model="newvideo.url">
+                </div>
+            </div>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Description:</label>
+                <div class="col-sm-10">
+                    <textarea  class="form-control ng-binding"  style="margin-bottom: 10px;" 
+                               ui-tinymce data-ng-model="newvideo.description" >
+
+                    </textarea>
+                </div>
+            </div>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Tags:</label>
+                <div class="col-sm-10"><input class="form-control"  style="margin-bottom: 10px;"   ng-model="newvideo.tags"></div></div>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Seo title</label>
+                <div class="col-sm-10"><input style="margin-bottom: 10px;" type="text" class="form-control"  
+                                              ng-model="newvideo.seoTitle"></div></div>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Seo description</label>
+                <div class="col-sm-10"><textarea class="form-control" style="margin-bottom: 10px;"
+                                                 ng-model="newvideo.seoDescription"></textarea></div></div>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Focused word:</label>
+                <div class="col-sm-10"><input style="margin-bottom :10px;" type="text" class="form-control"   
+                                              ng-model="newvideo.focusedWord"></div></div>
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Seo preview:</label>
+                <div class="col-sm-10">
+                    <h3 style="color:blue">{{newvideo.seoTitle}}</h3>
+                    <p style="color:green">{{newvideo.seoDescription}}</p>
+                    <p>{{newvideo.focusedWord}}</p>
+
+                </div></div>   
+
+            <div class="form-group"><label class="col-sm-2 col-sm-2 control-label">Select category:</label>
+                <div class="col-sm-10"><select style="margin-bottom: 10px;" class="btn btn-theme03" ng-model="newvideo.categoryId" 
+                                               ng-options="categoryId.type for categoryId in categories">
+                    </select></div></div>
+
+            <div>
+                <table class="table table-striped table-condensed table-hover">
+                    <tr  ng-repeat="video in newvideo.links">
+                        <td>
+                            <input style="margin-bottom: 10px;" type="text" 
+                                   class="form-control" placeholder="type url" ng-model="video.url">
+                        </td>
+                        <td>
+                            <input style="margin-bottom: 10px;" type="text" ng-init="video.text = 'dosyaları indirin'"
+                                   class="form-control" placeholder="dosyaları indirin" ng-model="video.text">
+                        </td>
+                        <td><button style="margin-bottom: 10px;" type="submit" 
+                                    class="btn btn-danger btn-xs" 
+                                    ng-click="deleteVideoLink(newvideo, video)">Delete link</button></td>
+                        <td>
+                            <div class="switch has-switch">
+
+                                <div ng-class="{
+                                        'switch-on switch-animate'
+                                                :video.working == true,
+                                                'switch-off switch-animate'
+                                                :video.working == false}" >
+                                    <input type="checkbox"  data-toggle="switch">
+                                    <span class="switch-left"  ng-click="toggleWorking(video)">on</span>
+                                    <label>&nbsp;</label>
+                                    <span class="switch-right" ng-click="toggleWorking(video)">off</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <button  type="button"  class="btn btn-warning" ng-click="addVideoLinks(newvideo)">Add New Link</button>
+            <button type="button" class="btn btn-primary"  ng-click="addVideo(newvideo)">Save changes</button>
+        </div>
+
+
+
+
+
+        <!--delete--> 
+        <div class="modal fade" id="deleteModal"  role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" id="dialogbox"> 
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Delete Video?</h4>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="close_dlg">No</button>
+                        <<<<<<< .mine
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="close_dlg" ng-click="deleteVideo();
+                            reloadRoute()">Yes</button>
+                        =======
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="close_dlg" ng-click="deleteVideo();
+                            reloadRoute()">Yes</button>
+                        >>>>>>> .r278
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div> 
+</div>
